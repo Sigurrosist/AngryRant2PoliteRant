@@ -13,15 +13,10 @@ The Polite Rant Generator is a web application that helps users transform angry 
 
 ## Getting Started
 
-1. Clone this repository to your local machine.
+Clone this repository to your local machine.
 
-```
-git clone https://github.com/yourusername/polite-rant-generator.git
-```
 Navigate to the project directory.
-```
-cd polite-rant-generator
-```
+
 Install the required Python packages.
 ```
 pip install -r requirements.txt
