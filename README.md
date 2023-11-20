@@ -1,4 +1,4 @@
-# AngryRant2PoliteRant# Polite Rant Generator
+#AngryRant2PoliteRant# Polite Rant Generator
 
 ## Description
 
