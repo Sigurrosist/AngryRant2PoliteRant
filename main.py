@@ -60,7 +60,7 @@ with co2:
     )
 
 st.write(
-    "### This app uses OpenApi key. You can get one [here](https://beta.openai.com/)."
+    "### This app uses OpenAI API key. You can get one [here](https://beta.openai.com/)."
 )
 
 
