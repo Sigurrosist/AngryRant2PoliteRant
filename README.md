@@ -45,4 +45,4 @@ The result will be displayed in the "Result" section.
 I drew inspiration for this project from this [YouTube tutorial](https://youtu.be/U_eV8wfMkXU?si=GgnSllGWp6J5SOJW).
 
 ## Contact
-If you have any questions or feedback, feel free to contact us at mokjooyeon00@gmail.com
+If you have any questions or feedback, feel free to contact me at mokjooyeon00@gmail.com
