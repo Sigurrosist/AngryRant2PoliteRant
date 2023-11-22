@@ -95,9 +95,9 @@ with col1:
 with col2:
     st.write("## Settings")
     st.write("Select the level of politeness:")
-    level = st.slider(label="", min_value=0, max_value=10, value=5, step=1)
+    level = st.slider(label="Level of politeness", min_value=0, max_value=10, value=5, step=1)
     st.write("Select the language:")
-    language = st.selectbox(label="", options=["English", "Spanish", "French"])
+    language = st.selectbox(label="Language", options=["English", "Spanish", "French"])
     st.write()
 
 
