@@ -14,13 +14,7 @@ template = """
     - Adjust the tone to the requested level of politeness (0-10)
     - Convert the input into the requested language (English, Spanish, French)
     - Maintain the overall meaning of the input
-    - Make it sound natural
     - Make it as long as the original input
-
-    Here are examples for each level of politeness:
-    0: "You are a rude person."
-    1: "You are being rude."
-    ...
 
     Here is the request:
     Message to convert: {angry_rant}
@@ -46,7 +40,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Inserting an image
+# Inserting an image / text using columns
 co1, co2 = st.columns(2)
 with co1:
     st.image(
