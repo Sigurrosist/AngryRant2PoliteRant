@@ -7,7 +7,8 @@ template = """
     Below is an angry rant message.
     The writer wants to send this message to the recipient.
     The message can be very rough and messy, with curses and bad word choices.
-    Turn it into a polite complaint message.
+    Turn it into a polite complaint message, while maintaining the overall meaning.
+    It should be a message that the recipient can understand and accept.
 
     Your goal is to:
     - Properly address the person's concerns
