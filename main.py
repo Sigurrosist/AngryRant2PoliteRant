@@ -99,7 +99,7 @@ with col2:
         label="Level of politeness", min_value=0, max_value=10, value=5, step=1
     )
     st.write("Select the language:")
-    language = st.selectbox(label="Language", options=["English", "Spanish", "French"])
+    language = st.selectbox(label="Language", options=["English", "Spanish", "French", "Korean"])
 
 if st.button(label="Generate!"):
     if validate_input(openai_api_key, angry_rant):
