@@ -1,5 +1,5 @@
 import streamlit as st
-import langchain 
+import langchain as langchain
 from langchain.llms import OpenAI
 
 # Template for prompt
