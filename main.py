@@ -116,4 +116,7 @@ if st.button(label="Generate!"):
             polite_rant = llm(prompt_polite_rant)
             st.write(polite_rant)
         except Exception as e:
-            st.error(f"An error occurred: {e}")
+            if e.code == 'invalid_api_key':
+                st.warning("API key is invalid. Please check your OpenAI API key")
+            else:
+                st.error(f"An error occurred while generating the polite rant: {e}")
