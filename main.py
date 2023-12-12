@@ -1,5 +1,5 @@
 import streamlit as st
-import langchain
+import langchain 
 from langchain.llms import OpenAI
 
 # Template for prompt
@@ -30,10 +30,8 @@ prompt = langchain.prompts.PromptTemplate(
     template=template,
 )
 
-# Setting page config
 st.set_page_config(page_title="Polite Rant Generator", page_icon=":sunglasses:")
 
-# Center-aligned header text using HTML and CSS
 st.markdown(
     """
     <h2 style="text-align: center;">Angry Rant 😡 to Polite Rant 🙏</h1>
@@ -41,7 +39,6 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Inserting an image / text using columns
 co1, co2 = st.columns(2)
 with co1:
     st.image(
@@ -67,10 +64,13 @@ openai_api_key = get_api_key()
 
 
 def get_llm(openai_api_key):
-    return OpenAI(
-        temperature=0.5,
-        openai_api_key=openai_api_key,
-    )
+    try :
+        return OpenAI(
+            temperature=0.5,
+            openai_api_key=openai_api_key,
+        )
+    except Exception as e:
+            st.error(f"An error occurred while getting LLM: {e}")
 
 
 def validate_input(openai_api_key, angry_rant):
@@ -106,9 +106,12 @@ if st.button(label="Generate!"):
         llm = get_llm(openai_api_key)
         st.write("## Result")
         st.write("This is the civilized version of your rant:")
-        prompt_polite_rant = prompt.format(
-            angry_rant=angry_rant, level=level, language=language
-        )
+        try:
+            prompt_polite_rant = prompt.format(
+                angry_rant=angry_rant, level=level, language=language
+            )
+        except Exception as e:
+            st.error(f"An error occurred while formating the prompt: {e}")
         try:
             polite_rant = llm(prompt_polite_rant)
             st.write(polite_rant)
