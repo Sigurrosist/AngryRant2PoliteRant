@@ -1,5 +1,5 @@
 import streamlit as st
-import langchain as langchain
+from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 
 # Template for prompt
@@ -25,7 +25,7 @@ template = """
     Polite complaint message:
 """
 
-prompt = langchain.prompts.PromptTemplate(
+prompt = PromptTemplate(
     input_variables=["angry_rant", "level", "language"],
     template=template,
 )
