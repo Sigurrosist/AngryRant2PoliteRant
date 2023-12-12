@@ -1,5 +1,5 @@
 import streamlit as st
-import langchain as langchain
+import langchain
 from langchain.llms import OpenAI
 
 # Template for prompt
@@ -74,17 +74,16 @@ def get_llm(openai_api_key):
 
 
 def validate_input(openai_api_key, angry_rant):
-    validated = True
     if not openai_api_key:
         st.warning("Please enter your OpenAI API key", icon="🙏")
-        validated = False
+        return False
     if not angry_rant.strip():
         st.warning("Please enter a rant before generating", icon="🙏")
-        validated = False
+        return False
     if len(angry_rant.split()) > 400:
         st.warning("Please enter a rant of less than 400 words", icon="🙏")
-        validated = False
-    return validated
+        return False
+    return True
 
 
 # Setting columns to divide the page
@@ -96,22 +95,22 @@ with col1:
 with col2:
     st.write("## Settings")
     st.write("Select the level of politeness:")
-    level = st.slider(label="Level of politeness", min_value=0, max_value=10, value=5, step=1)
+    level = st.slider(
+        label="Level of politeness", min_value=0, max_value=10, value=5, step=1
+    )
     st.write("Select the language:")
     language = st.selectbox(label="Language", options=["English", "Spanish", "French"])
-    st.write()
-
 
 if st.button(label="Generate!"):
-    validated = validate_input(openai_api_key, angry_rant)
-    if validated:
-        ## Generate polite rant
+    if validate_input(openai_api_key, angry_rant):
         llm = get_llm(openai_api_key)
         st.write("## Result")
         st.write("This is the civilized version of your rant:")
         prompt_polite_rant = prompt.format(
             angry_rant=angry_rant, level=level, language=language
         )
-        polite_rant = llm(prompt_polite_rant)
-
-        st.write(polite_rant)
+        try:
+            polite_rant = llm(prompt_polite_rant)
+            st.write(polite_rant)
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
