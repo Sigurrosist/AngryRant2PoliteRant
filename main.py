@@ -51,7 +51,7 @@ with co1:
 with co2:
     st.write("### Let's fix this!")
     st.markdown(
-        "Turn your Angry Rant 😡 into a Polite Rant 🙏 with just a few clicks. Express your frustrations, select the level of politeness, and let the app craft a more civilized version of your complaints. It's the perfect tool to maintain a positive tone wht\'s turn anger into understanding! 😊✨"
+        "Turn your Angry Rant 😡 into a Polite Rant 🙏 with just a few clicks. Express your frustrations, select the level of politeness, and let the app craft a more civilized version of your complaints. It's the perfect tool to maintain a positive tone while complaining 😊✨"
     )
 
 st.write(
