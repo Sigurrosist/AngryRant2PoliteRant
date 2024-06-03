@@ -12,7 +12,7 @@ template = """
 
     Your goal is to:
     - Properly address the person's concerns
-    - Adjust the tone to the requested level of politeness (0-10)
+    - Adjust the tone to the requested level of politeness (0 to 10)
     - Convert the input into the requested language (English, Spanish, French)
     - Maintain the overall meaning of the input
     - Make it as long as the original input
